@@ -2,7 +2,7 @@
   <v-container>
     <v-row>
       <v-col>
-        <AddItem />
+        <AddItem :width="'30%'" />
       </v-col>
     </v-row>
     <ListTasks />

@@ -1,9 +1,12 @@
 import _ from "lodash";
-import { ADD_TASK, UPDATE_TASK, DELETE_TASK } from "../actions/tasks";
+import {
+  ADD_TASK,
+  UPDATE_TASK,
+  DELETE_TASK
+} from "../actions/tasks";
 const uniqueID = () => Math.floor(Math.random() * Date.now());
 const state = {
-  tasks: [
-    {
+  tasks: [{
       id: uniqueID(),
       text: "i will learn english at 7h"
     },
@@ -21,16 +24,22 @@ const getters = {
   getTasks: (state) => state.tasks
 };
 const actions = {
-  [ADD_TASK]: ({ commit }) => {
+  [ADD_TASK]: ({
+    commit
+  }, payload) => {
     commit(ADD_TASK, {
       id: uniqueID(),
-      text: "I will make some u happy"
+      text: payload
     });
   },
-  [UPDATE_TASK]: ({ commit }) => {
+  [UPDATE_TASK]: ({
+    commit
+  }) => {
     commit(UPDATE_TASK);
   },
-  [DELETE_TASK]: ({ commit }) => {
+  [DELETE_TASK]: ({
+    commit
+  }) => {
     commit(DELETE_TASK);
   }
 };
